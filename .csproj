@@ -1,1 +1,42 @@
-Respondences
+<!-- Respondences -->
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework> <!-- Change to net5.0 or net7.0 as needed -->
+    <RootNamespace>com.github.thaumaturgists.OAREPL</RootNamespace> <!-- Corrected namespace format -->
+    <AssemblyName>OAREPL</AssemblyName> <!-- Name of the compiled assembly -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Unit Testing -->
+    <PackageReference Include="NUnit" Version="[4.2.0,5.0.0)" /> <!-- Accepts version 4.2.0 and above --><!-- https://nunit.org/download/ -- https://github.com/nunit/nunit/releases --> 
+    <PackageReference Include="Moq" Version="[4.20.2,5.0.0)" /> <!-- Accepts version 4.20.2 and above --><!-- https://github.com/devlooped/moq/releases -->
+
+    <!-- Logging -->
+    <PackageReference Include="Serilog" Version="[4.2.0,5.0.0)" /> <!-- Accepts version 4.2.0 and above --><!-- https://github.com/devlooped/moq/releases -->
+    <PackageReference Include="Serilog.Sinks.Console" Version="[5.0.1,6.0.0)" /> <!-- Accepts version 5.0.1 and above --><!-- https://github.com/serilog/serilog-sinks-console/releases -->
+
+    <!-- JSON Handling -->
+    <PackageReference Include="Newtonsoft.Json" Version="[13.0.1,14.0.0)" /> <!-- Accepts version 13.0.1 and above --><!-- https://github.com/JamesNK/Newtonsoft.Json/releases -->
+
+   <!-- ORM and Database Interactions --><!-- https://github.com/dotnet/efcore -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="[9.0.0,10.0.0)" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="[9.0.0,10.0.0)" /> <!-- For SQL Server -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="[9.0.0,10.0.0)" /> <!-- For EF Core tools -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="[9.0.0,10.0.0)" /> <!-- For design-time support -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="[9.0.0,10.0.0)" /> <!-- For in-memory testing -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="[9.0.0,10.0.0)" /> <!-- For SQLite support -->
+    
+    <!-- Lightweight ORM -->
+    <PackageReference Include="Dapper" Version="[2.1.44,3.0.0)" /><!-- https://github.com/DapperLib/Dapper/releases -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\YourOtherProject\YourOtherProject.csproj" /> <!-- Optional: Reference to another project -->
+  </ItemGroup> 
+
+  <!-- Testing Framework: Since you are using NUnit, ensure you have a test project set up to utilize it effectively. -->
+
+</Project>
+
+
