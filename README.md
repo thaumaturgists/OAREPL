@@ -51,11 +51,22 @@ To get started with OAREPL, follow these steps:
    git clone https://github.com/thaumaturgists/OAREPL.git
    cd OAREPL
    ```
-2. Install the required dependencies:
+2. Install the [required dependencies](requirements.txt):
    ```
    pip install -r requirements.txt
    ```
-3. Set up your Azure and Terraform environment (provided specific instructions here: [Skilled in Maneuvering](remunerator.man)).
+   - Plans to revolve for `poetry`
+3. **C/C++/C# Dependencies**
+   - [C/C++ Dependencies](CMakeLists.txt)
+   ```
+   C/C++ are managed using CMake. Please refer to the <CMakeLists.txt> file for details on how to build the project.
+   ```
+
+   - [C# Dependencies](.csproj)
+   ```
+   C# dependencies are managed through NuGet. You can find the necessary packages in the <.csproj> file.
+   ```
+4. Set up your Azure and Terraform environment (provided specific instructions here: [Skilled in Maneuvering](remunerator.man)).
 
 ### Usage
 
