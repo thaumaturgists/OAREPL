@@ -55,7 +55,7 @@ To get started with OAREPL, follow these steps:
    ```
    pip install -r requirements.txt
    ```
-3. Set up your Azure and Terraform environment (provided specific instructions here: <a herf="remunerator.man"> Skilled in Maneuvering </a>).
+3. Set up your Azure and Terraform environment (provided specific instructions here: [Skilled in Maneuvering](remunerator.man)).
 
 ### Usage
 
