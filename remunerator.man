@@ -1,1 +1,113 @@
 # Enumerator
+
+
+.TH AZURE_TERRAFORM_SETUP 1 "December 2024" "1.0" "Azure and Terraform Setup Manual"
+.SH NAME
+azure_terraform_setup \- Set up your Azure and Terraform environment
+
+.SH SYNOPSIS
+azure_terraform_setup
+
+.SH DESCRIPTION
+Setting up an Azure and Terraform environment involves several steps, including creating an Azure account, installing Terraform, and configuring your environment. Below are specific instructions to help you get started.
+
+.SH STEPS
+
+.TP
+.B Step 1: Create an Azure Account
+1. Sign Up for Azure:
+   - Go to the Azure Free Account page: https://azure.microsoft.com/en-us/free/.
+   - Click on "Start free" and follow the prompts to create your account. You may need to provide a credit card for verification, but you won't be charged for using free services.
+
+.TP
+.B Step 2: Install Terraform
+1. Download Terraform:
+   - Go to the Terraform downloads page: https://www.terraform.io/downloads.html.
+   - Download the appropriate package for your operating system (Windows, macOS, or Linux).
+
+2. Install Terraform:
+   - Windows: Unzip the downloaded file and move the `terraform.exe` to a directory included in your system's PATH (e.g., `C:\Program Files\Terraform`).
+   - macOS: Use Homebrew to install Terraform:
+     .B
+     brew tap hashicorp/tap
+     brew install hashicorp/tap/terraform
+     .B
+   - Linux: Unzip the downloaded file and move the `terraform` binary to `/usr/local/bin`:
+     .B
+     unzip terraform_*.zip
+     sudo mv terraform /usr/local/bin/
+
+3. Verify Installation:
+   - Open a terminal or command prompt and run:
+     .B
+     terraform -version
+   - This should display the installed version of Terraform.
+
+.TP
+.B Step 3: Configure Azure CLI
+1. Install Azure CLI:
+   - Follow the instructions on the Azure CLI installation page: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli for your operating system.
+
+2. Log in to Azure:
+   - Open a terminal and run:
+     .B
+     az login
+   - This will open a web browser for you to log in to your Azure account. After logging in, you will see a list of your subscriptions.
+
+.TP
+.B Step 4: Set Up Your Terraform Project
+1. Create a Directory for Your Project:
+   .B
+   mkdir my-terraform-project
+   cd my-terraform-project
+
+2. Create a Terraform Configuration File:
+   - Create a file named `main.tf` in your project directory. This file will contain your Terraform configuration. Here’s a simple example to create an Azure resource group:
+   .B
+   provider "azurerm" {
+     features {}
+   }
+
+   resource "azurerm_resource_group" "example" {
+     name     = "example-resources"
+     location = "East US"
+   }
+
+.TP
+.B Step 5: Initialize Terraform
+1. Initialize the Terraform Project:
+   - Run the following command in your project directory:
+     .B
+     terraform init
+
+.TP
+.B Step 6: Plan and Apply Your Configuration
+1. Create an Execution Plan:
+   - Run the following command to see what actions Terraform will take:
+     .B
+     terraform plan
+
+2. Apply the Configuration:
+   - To create the resources defined in your configuration, run:
+     .B
+     terraform apply
+   - Type `yes` when prompted to confirm the action.
+
+.TP
+.B Step 7: Verify Resources in Azure
+- Go to the Azure Portal: https://portal.azure.com/ and navigate to "Resource groups" to see the newly created resource group.
+
+.TP
+.B Step 8: Clean Up Resources
+- To remove the resources created by Terraform, run:
+   .B
+   terraform destroy
+- Type `yes` when prompted to confirm the destruction of resources.
+
+.SH USAGE
+- Infrastructure as Code: Terraform allows you to define your infrastructure in code, making it easy to version, share, and manage.
+- Automation: Automate the provisioning and management of Azure resources.
+- Multi-Cloud Support: Terraform can manage resources across multiple cloud providers, not just Azure.
+
+.SH EXAMPLES
+By following these steps, you should have a basic Azure and Terraform environment set up and ready for use. You can expand your Terraform configurations to include more complex resources and architectures as needed.
