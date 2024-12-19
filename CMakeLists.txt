@@ -27,6 +27,8 @@ find_package(Boost 1.87 REQUIRED COMPONENTS filesystem system)  # Accepts Boost 
 find_package(fmt 11.0 REQUIRED)  # For formatting library # Accepts fmt 11.0 and above # <https://fmt.dev/11.0> stable <https://github.com/fmtlib/fmt/releases>
 find_package(nlohmann_json 3.11.3 REQUIRED)  # For JSON handling # Accepts nlohmann_json 3.11.3 and above # <https://json.nlohmann.me> stable <https://github.com/nlohmann/json/releases>
 find_package(GTest 1.15.2 REQUIRED)  # For unit testing # Accepts GTest 1.15.2 and above # <https://github.com/google/googletest/releases> stable <https://google.github.io/googletest>
+find_package(Catch2 3.7.1 REQUIRED)  # For Catch2 testing framework # <https://github.com/catchorg/Catch2/releases>
+find_package(CppUTest 4.0 REQUIRED)  # For CppUTest framework # <http://cpputest.github.io/> stable <https://github.com/cpputest/cpputest/releases>
 find_package(Poco 1.13.2 REQUIRED)  # For networking and utilities # Accepts Poco 1.13.2 and above # <https://github.com/pocoproject/poco/releases> stable <https://pocoproject.org/documentation.html>
 find_package(Eigen3 3.4.0 REQUIRED)  # For linear algebra # Accepts Eigen3 3.4.0 and above # <https://gitlab.com/libeigen/eigen/-/releases> stable <https://eigen.tuxfamily.org/index.php?title=Main_Page>
 
@@ -37,15 +39,14 @@ include_directories(
     ${fmt_INCLUDE_DIRS}
     ${nlohmann_json_INCLUDE_DIRS}
     ${GTEST_INCLUDE_DIRS}
+    ${CATCH2_INCLUDE_DIRS}
+    ${CPPUTEST_INCLUDE_DIRS}
     ${Poco_INCLUDE_DIRS}
     ${EIGEN3_INCLUDE_DIRS}
 )
 
 # Add the main executable
-# add_executable(OAREPL main.cpp)  ###############
-
-# Add the main executable
-add_executable(OAREPL main.cpp src/module1.cpp src/module2.cpp)  ###############
+add_executable(OAREPL main.cpp src/module1.cpp src/module2.cpp)
 
 # Optionally, you can specify additional source files or directories
 # If you have a directory with multiple source files, you can use file globbing
@@ -61,12 +62,16 @@ target_link_libraries(OAREPL
     nlohmann_json::nlohmann_json
     GTest::GTest
     GTest::Main
+    Catch2::Catch2
+    CppUTest::CppUTest
     Poco::Poco
     Eigen3::Eigen
 )
 
 # Optionally, add tests
 enable_testing()
+
+# Add Google Test tests
 add_executable(OAREPL_tests test_main.cpp)  # Assuming you have a test file ###############
 target_link_libraries(OAREPL_tests
     GTest::GTest
@@ -75,3 +80,19 @@ target_link_libraries(OAREPL_tests
 
 # Register tests with CMake
 add_test(NAME OAREPLTests COMMAND OAREPL_tests)
+
+# Add Catch2 tests
+add_executable(Catch2_tests test_catch2.cpp)  # Assuming you have a Catch2 test file
+target_link_libraries(Catch2_tests
+    Catch2::Catch2
+)
+
+add_test(NAME Catch2Tests COMMAND Catch2_tests)
+
+# Add CppUTest tests
+add_executable(CppUTest_tests test_cpputest.cpp)  # Assuming you have a CppUTest test file
+target_link_libraries(CppUTest_tests
+    CppUTest::CppUTest
+)
+
+add_test(NAME CppUTestTests COMMAND CppUTest_tests)
