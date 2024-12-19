@@ -12,6 +12,14 @@
     <PackageReference Include="NUnit" Version="[4.2.0,5.0.0)" /> <!-- Accepts version 4.2.0 and above --><!-- https://nunit.org/download/ -- https://github.com/nunit/nunit/releases --> 
     <PackageReference Include="Moq" Version="[4.20.2,5.0.0)" /> <!-- Accepts version 4.20.2 and above --><!-- https://github.com/devlooped/moq/releases -->
 
+    <!-- xUnit -->
+    <PackageReference Include="xunit" Version="[0.7.0,4.0.0)" /> <!-- Accepts version v3-0.7.0 and above --><!-- https://xunit.net/releases/v3/ --><!-- https://github.com/xunit/xunit/tags -->
+    <PackageReference Include="xunit.runner.visualstudio" Version="[3.0.0,4.0.0)" /> <!-- For running xUnit tests in Visual Studio --><!-- https://xunit.net/releases/visualstudio -->
+
+    <!-- MSTest -->
+    <PackageReference Include="MSTest.TestAdapter" Version="[3.6.3,4.0.0)" /> <!-- Accepts version 2.2.9 and above --><!-- https://github.com/microsoft/testfx/releases --><!-- https://www.nuget.org/packages/MSTest.TestAdapter -->
+    <PackageReference Include="MSTest.TestFramework" Version="[3.6.3,4.0.0)" /> <!-- Accepts version 2.2.9 and above -->
+
     <!-- Logging -->
     <PackageReference Include="Serilog" Version="[4.2.0,5.0.0)" /> <!-- Accepts version 4.2.0 and above --><!-- https://github.com/serilog/serilog/releases -->
     <PackageReference Include="Serilog.Sinks.Console" Version="[5.0.1,6.0.0)" /> <!-- Accepts version 5.0.1 and above --><!-- https://github.com/serilog/serilog-sinks-console/releases -->
