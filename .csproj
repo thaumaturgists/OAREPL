@@ -13,7 +13,7 @@
     <PackageReference Include="Moq" Version="[4.20.2,5.0.0)" /> <!-- Accepts version 4.20.2 and above --><!-- https://github.com/devlooped/moq/releases -->
 
     <!-- Logging -->
-    <PackageReference Include="Serilog" Version="[4.2.0,5.0.0)" /> <!-- Accepts version 4.2.0 and above --><!-- https://github.com/devlooped/moq/releases -->
+    <PackageReference Include="Serilog" Version="[4.2.0,5.0.0)" /> <!-- Accepts version 4.2.0 and above --><!-- https://github.com/serilog/serilog/releases -->
     <PackageReference Include="Serilog.Sinks.Console" Version="[5.0.1,6.0.0)" /> <!-- Accepts version 5.0.1 and above --><!-- https://github.com/serilog/serilog-sinks-console/releases -->
 
     <!-- JSON Handling -->
