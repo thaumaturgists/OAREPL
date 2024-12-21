@@ -1,3 +1,15 @@
-escaloping
-as
-opalescing
+{
+  "name": "escaloping-as-opalescing",
+  "version": "1.0.0",
+  "description": "A package that includes the concepts of escaloping and opalescing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "escaloping",
+    "opalescing"
+  ],
+  "author": "Patrick Connor Adams <thaumaturgists@github.com>",
+  "license": "MIT"
+}
