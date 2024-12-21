@@ -13,6 +13,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
+        node-version: [14, 16]  # You can specify multiple Node.js versions
 
     steps:
       - name: Checkout code
@@ -21,11 +22,12 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
         run: npm install
+        working-directory: ./src  # Change to the src directory
 
       - name: Run tests
         run: npm test
-
+        working-directory: ./src  # Change to the src directory
