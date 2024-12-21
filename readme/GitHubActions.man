@@ -78,7 +78,7 @@ GitHub Actions is a powerful feature of GitHub that allows you to automate workf
 
          - name: Run tests
            run: npm test
-           working-directory: ./src  # Change to the src directory
+           working-directory: ./tests  # Change to the tests directory
    .fi
 
 3. **Commit and Push**:
