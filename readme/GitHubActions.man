@@ -1,4 +1,4 @@
-.TH README 1 "October 2023" "GitHub Actions Documentation"
+.TH README 1 "December 2024" "GitHub Actions Documentation"
 .SH NAME
 README \- GitHub Actions Overview
 
