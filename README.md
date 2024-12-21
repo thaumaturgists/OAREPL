@@ -19,6 +19,7 @@ OAREPL is a project aimed at enhancing automation processes and improving system
 ### Table of Contents
 
 - [Features](#features)
+  	- [GitHub Actions](GitHubActions.man)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
