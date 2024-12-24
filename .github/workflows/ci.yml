@@ -24,6 +24,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./  # Pointing to the root directory where package.json is located
+
+      - name: Run tests
+        run: npm test
+        working-directory: ./tests  # Change to the tests directory
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
@@ -52,24 +60,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: "{{defaultContext}}:mysubdir"
+          context: ./mysubdir  # Replace with the actual context if needed
           push: true
           tags: user/app:latest
-
-      - name: Install dependencies
-        run: npm install
-        working-directory: ./  # Pointing to the root directory where package.json is located
-
-      - name: Run tests
-        run: npm test
-        working-directory: ./tests  # Change to the tests directory
-
-      - name: Run Tests (Optional)
-        if: ${{ github.event_name == 'push' }}
-        run: |
-          docker run --rm thaumaturgists/canamus:latest npm test
-
-      - name: Run Tests (Optional)
-        if: ${{ github.event_name == 'push' }}
-        run: |
-          docker run --rm thaumaturgists/canamus:latest npm test
