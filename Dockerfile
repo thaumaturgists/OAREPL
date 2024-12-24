@@ -11,3 +11,6 @@ COPY . .
 
 # Specify the command to run when the container starts
 CMD ["R", "--no-save"]
+# If you want to run a specific R script or command, you can modify this line. For example, if you have a script named script.R, you could change it to:
+# CMD ["Rscript", "script.R"]
+# Adding --no-save to the CMD can be useful to prevent R from saving the workspace at the end of the session, which is often not needed in a containerized environment.
