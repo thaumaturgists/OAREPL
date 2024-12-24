@@ -1,9 +1,13 @@
 FROM r-base:latest
 
-     RUN R -e "install.packages(c('ggplot2', 'dplyr', 'tidyverse'), repos='http://cran.rstudio.com/')"
+# Install R packages
+RUN R -e "install.packages(c('ggplot2', 'dplyr', 'tidyverse'), repos='http://cran.rstudio.com/', dependencies=TRUE)"
 
-     WORKDIR /usr/src/app
+# Set the working directory
+WORKDIR /usr/src/app
 
-     COPY . .
+# Copy the current directory contents into the container at /usr/src/app
+COPY . .
 
-     CMD ["R"]
+# Specify the command to run when the container starts
+CMD ["R", "--no-save"]
