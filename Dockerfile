@@ -1,4 +1,4 @@
-# Start with a base image (like a cake mix) # <https://hub.docker.com/_/python/>
+# Start with a base image (like a cake mix) # <https://hub.docker.com/_/python/> #NOTE: Use the official - check wherever the Official is
 FROM python:3.8-slim
 
 # Set the working directory (like your kitchen)
