@@ -1,16 +1,20 @@
-FROM r-base:latest
+# Start with a base image (like a cake mix) # <https://hub.docker.com/_/python/>
+FROM python:3.8-slim
 
-# Install R packages
-RUN R -e "install.packages(c('ggplot2', 'dplyr', 'tidyverse'), repos='http://cran.rstudio.com/', dependencies=TRUE)"
+# Set the working directory (like your kitchen)
+WORKDIR /app
 
-# Set the working directory
-WORKDIR /usr/src/app
+# Copy files into the image (like bringing ingredients to the counter)
+COPY . /app
 
-# Copy the current directory contents into the container at /usr/src/app
-COPY . .
+# Install packages (like mixing the ingredients)
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Specify the command to run when the container starts
-CMD ["R", "--no-save"]
-# If you want to run a specific R script or command, you can modify this line. For example, if you have a script named script.R, you could change it to:
-# CMD ["Rscript", "script.R"]
-# Adding --no-save to the CMD can be useful to prevent R from saving the workspace at the end of the session, which is often not needed in a containerized environment.
+# Open a port (like opening a window)
+EXPOSE 80
+
+# Set an environment variable (like saying "I want chocolate")
+ENV NAME World
+
+# Run the program when the container starts (like serving the cake)
+CMD ["python", "app.py"]
