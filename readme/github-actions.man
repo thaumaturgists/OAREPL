@@ -1,4 +1,4 @@
-.TH README 1 "December 2024" "GitHub Actions Documentation"
+.TH GITHUB-ACTIONS 1 "December 2024" "GitHub Actions Documentation"
 .SH NAME
 README \- GitHub Actions Overview
 
@@ -181,3 +181,6 @@ A well-organized project structure, including dedicated `src/` and `tests/` dire
 The `package.json` file is a critical component of Node.js projects, providing essential metadata, managing dependencies, and defining scripts for various tasks. It plays a vital role in the development workflow, allowing for easy installation of packages and execution of scripts, while also ensuring that your project is compatible with the required Node.js environment.
 
 By following these best practices and utilizing the tools provided by GitHub Actions and Node.js, you can create robust, maintainable, and efficient software projects that are well-prepared for collaboration and deployment.
+
+.SH AUTHOR
+Written by Patrick Connor Adams (thaumaturgists).
