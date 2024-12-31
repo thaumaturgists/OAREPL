@@ -40,7 +40,7 @@ GitHub Actions is a powerful feature of GitHub that allows you to automate workf
 .IP 3. Create a new YAML file (e.g., `ci.yml`) in that directory.
 
 .IP 2. **Define the Workflow**:
-Here’s an example of a workflow that uses a matrix strategy to run tests in the `src/` directory across multiple operating systems and Node.js versions:
+Here’s an example of a workflow that uses a matrix strategy to run tests in the `teats/` directory across multiple operating systems and Node.js versions:
 
 .B YAML
 .nf
@@ -65,11 +65,11 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
        
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
 
